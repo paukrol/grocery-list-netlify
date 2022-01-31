@@ -1,0 +1,87 @@
+Dave Gray React Tutorial
+
+1. Rekomendowane rozszerzenie do VSCode --> ES7 React/Redux/GraphQL/React-Native snippets
+2. Drugi krok ustawień w VSCode --> File -> Preferences -> Settings -> emmet w wyszukiwarce -> Emmet: Include Languages -> Add Item -> javascript / javascriptreact
+
+3. Projekt uruchamiamy w terminalu --> npm start
+4. Do zastopowania local server (projekt przestanie działać) --> Ctrl + C
+5. W nawiasach {} w JSX nie renderują się obiekty i boolean value! String, number, array - tak!
+6. Jeżeli chemy wyszuakać dany snippet --> Ctrl + Alt + r
+7. Jeżeli chcę sprawdzić skórty w Win --> Ctrl P --> np snippet -> i pokaże się skrót na klawiaturze jaki użyć
+9. Ctrl + Alt + r --> rafce --> i stowrzy nam się Component Function
+
+10. Dodawanie styles css --> dla małych projetów najlepiej robić w jednym pliku (index.css), jak projekt jest duży najlepiej do każdego Componentu mieć odrębny plik css;
+w celu ułatwienia pracy -->styled-components.com
+11. Jeżeli będziemy dodawać pliki css do każdego komponentu, to trzeba robić import .css bezpośrednio w komponentach
+
+12. Do zainstalowania react icons --> w terminalu --> npm i react-icons lub npm i react-icons -D a to jest to samo co: npm i react-icons --save
+
+13. focus oznacza że jak kliniemy to się wykona to co chcemy a jak kliniemy gdzieś indziej to wtedy znika nasz focus i nasz style do focus
+
+14. Jeżeli chcę sprawdzić jak zmieniają się dane w useState() --> To zakładka Components w Chrome Dev --> Hooks
+
+15. Jeżeli w parent Component nie przekazemy props, a będzie on w child component, to dobrze jest mieć defaultProps w child component: 
+   Header.defaultProps = {
+     title: "Default title",
+   }; 
+
+16. jako props można wysyłać teź np setItems={setItems}
+17. W projekcie nie bło konieczne przekazywac do parent component, czyli do App() funkcji handleCheck i handleDelete, jeżeli jako props zrobiliśmy setItems
+
+18. Shift + Tab --> Cofa nam zaznaczony element o 1 tab
+
+19. Atrybuty w JSX --> camelCase, za wyjątkiem atrybutu: aria-label
+
+20. Żeby zmienić nazwę folderu, który stworzyliśmy za pomocą npx create-react-app, to trzeba: zmienić nazwę folderu, a następnie nazwę "name" w package.json i package-lock.json na ta nową
+
+21. W package.json w dex-dependence mamy zainstalowane react-icons, a chemy je miec w produckji (czyli w depedences) --> w terminalu: 
+
+22. Jeżeli w component mamy props key, to wtedy w funkcji componentu, już nie potrzebujemy tego i kasuejmy (Chapter 9)
+
+23. Dodajemy nowy component: AddItem.js (Chapter 9)
+
+24. Skrót ctrl + alt + r ---> rafce --> tworzy sie function component (snippets react)
+
+25. W <label htmlFor=""> w react to jest to samo co <label for=""> w JS
+26. <button type="submit"> --> type=submit jest przy button zawsze w domyśle więc tego wcześniej nie robiliśmy, ale tu dla podkreślenia znaczenia
+
+27. aria-label uzylimsy w button element, bo tam będzie image, i dla okreslenia co to jest (coś na zasadzie alt przy img element)
+
+28. Pusta tablica [] w useEffect() oznacza że tylko jeden raz wyrenderuje się to co wewnątrz funkcji w useEfect(), na samym początku
+29. Tablica w useEffect --> to inaczej dependencies
+
+30. useEffect() jest asynchroniczna, wywoływana jest po wszytkich innych niesynchronicznych rzeczach
+
+31. useEffect() najlepeij służy do przezchowywania danych z API lub w naszym przypadku z localStorage
+
+32. Jeżeli użyjemy jakiś dependencies, to useEffect() zostanie wywyołana raz na samym początku a nastpnie przy kazdej zmianie naszego dependences
+
+33. Chapter 12: "JSON Server" ---> ważna strona npmjs.com --> w wyszukiwarce json-server
+
+34. tworzymy folder data, a w nim plik db.json i umieszczamy tam swoje początkowe dane
+
+35. Następnie instalujemy w terminalu: npx json-server -p 3500 -w data/db.json, i tak za każdym razem gdy chcemy uruchomić json server
+
+36. Zmienna pisana wielkimi literami oznacza, że jest stała, jak np. const API_URL
+
+37. Zeby useEffect() nie wykonywało się nieskończoną ilość razy przy fetch() trzeba dać emty array jako dependences --> [];
+
+38. try i catch stoswany jest po to by uzytkownikowi na stronie nie pokazywały sie błędy
+
+39. Chapter 14: CRUD --> oznacza: Create, update, delete --> odnośnie fetch()
+
+40. 304 ---> nie oznacza błędu więc nie musimy robić do tego catch, 304 oznacza, że nic się nie zminiło, czyli nie ma ani create new items, ani update, ani delete; 304 pojawia się gdy odświeżamy nasza strone
+
+41. Do update json object służy methoda PATCH
+
+42. Robie operacje CRUD po to by aktualizować db.json, ale po wczytaniu fetch() data z useEffect potem pracuje na danych ustawianych przy pomocy setItem()
+
+43. Jeżeli wywołuje funkcję async w innej funkcji np w addItem, to trzeba dodać do tej funkcji tez async --> async addItem
+
+46. Fake API https://jsonplaceholder.typicode.com/
+
+47. Żeby móc korzytsać z Router --> npm i react-router-dom -S
+
+48. Dwa sposoby wyświtlania swoich aplikacji: 
+    1) Netlify
+    2) gh-pages ---> npm i gh-pages -D
