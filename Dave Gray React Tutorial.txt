@@ -85,3 +85,8 @@ w celu ułatwienia pracy -->styled-components.com
 48. Dwa sposoby wyświtlania swoich aplikacji: 
     1) Netlify
     2) gh-pages ---> npm i gh-pages -D
+
+  49. PAMIĘRAJ!!! 
+  W netlify, jak tworzę stronę to w okienku: build command muszę dać --> CI= npm run build
+  Wtedy będzie działać, w innym przypadku strona się nie stworzy!
+  Ściagnąć tut11 --> tam kończy się na localStorage, a nie na fake API
